@@ -10,6 +10,10 @@ uniform float chain_spacing : hint_range(0.3, 3.0) = 1.0;
 uniform bool starburst_on = true;
 uniform vec2 uv_nudge = vec2(0.0, 0.0);
 
+// If you're using this lensflare shader with flashlight, keep this true
+// If you're using this lensflare shader with other light source, keep this false
+uniform bool angular_fade = true;
+
 varying vec2 v_light_uv;
 varying float v_visibility;
 
@@ -61,8 +65,9 @@ void vertex() {
 	v_light_uv += uv_nudge;
 
     vec3 light_fwd = normalize((MODEL_MATRIX * vec4(0.0, 0.0, -1.0, 0.0)).xyz);
-    vec3 to_cam    = normalize(CAMERA_POSITION_WORLD - NODE_POSITION_WORLD);
-    float vis      = pow(clamp(dot(light_fwd, to_cam), 0.0, 1.0), 4.0);
+    vec3 to_cam = normalize(CAMERA_POSITION_WORLD - NODE_POSITION_WORLD);
+    //float vis = pow(clamp(dot(light_fwd, to_cam), 0.0, 1.0), 4.0); old line
+	float vis = angular_fade ? pow(clamp(dot(light_fwd, to_cam), 0.0, 1.0), 4.0) : 1.0;
 
     float edge = max(abs(v_light_uv.x - 0.5), abs(v_light_uv.y - 0.5)) * 2.0;
     vis *= 1.0 - clamp((edge - 0.80) / 0.20, 0.0, 1.0);
@@ -100,6 +105,8 @@ void fragment() {
     }
 
 	col *= brightness * v_visibility;
+	//ALBEDO = col;
+	//ALPHA  = 1.0;
 	float lum = max(max(col.r, col.g), col.b);
 	ALBEDO = lum > 0.001 ? col / lum : vec3(0.0);
 	ALPHA  = min(lum, 1.0);

@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Procedural_Lens_Flare_4.6.3"
+run/main_scene="uid://cm1l0m4fv8upo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://dwypmt87af53r"
 
