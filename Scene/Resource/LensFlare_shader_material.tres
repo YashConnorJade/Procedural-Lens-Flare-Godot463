@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cpog08ip7rfj5"]
+
+[ext_resource type="Shader" uid="uid://bdi1g68y1mrk1" path="res://Scene/Shader/lens_flare_sh.gdshader" id="1_csgud"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_csgud")
+shader_parameter/viewport_size = Vector2(1920, 1080)
+shader_parameter/brightness = 0.1
+shader_parameter/flare_count = 7
+shader_parameter/chain_spacing = 2.00000009267093
+shader_parameter/starburst_on = true
+shader_parameter/uv_nudge = Vector2(0.085, -0.1)
