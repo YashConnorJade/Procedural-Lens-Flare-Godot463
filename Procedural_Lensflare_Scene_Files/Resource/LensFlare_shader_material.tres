@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cpog08ip7rfj5"]
+
+[ext_resource type="Shader" uid="uid://bdi1g68y1mrk1" path="res://Procedural_Lensflare_Scene_Files/Shader/lens_flare_sh.gdshader" id="1_csgud"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_csgud")
+shader_parameter/viewport_size = Vector2(1920, 1080)
+shader_parameter/brightness = 0.1
+shader_parameter/flare_count = 7
+shader_parameter/chain_spacing = 1.50000006892093
+shader_parameter/starburst_on = true
+shader_parameter/uv_nudge = Vector2(0.085, -0.1)
+shader_parameter/angular_fade = false
+shader_parameter/circle_color_00 = Vector3(0.5, 0.82, 1)
+shader_parameter/circle_color_01 = Vector3(1, 0.63, 0.22)
+shader_parameter/circle_color_02 = Vector3(0.38, 1, 0.56)
+shader_parameter/circle_color_03 = Vector3(0.35, 0.46, 1)
+shader_parameter/circle_color_04 = Vector3(1, 0.36, 0.56)
+shader_parameter/circle_color_05 = Vector3(0.62, 1, 0.92)
+shader_parameter/circle_color_06 = Vector3(1, 0.9, 0.42)

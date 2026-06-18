@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dlcfowwlqgdx3"]
+
+[ext_resource type="Material" uid="uid://cpog08ip7rfj5" path="res://Procedural_Lensflare_Scene_Files/Resource/LensFlare_shader_material.tres" id="1_gvlv0"]
+[ext_resource type="Texture2D" uid="uid://tw3inuo8iup3" path="res://Procedural_Lensflare_Scene_Files/Resource/Lensflare_Gradient_Texture_2D.tres" id="2_ugcrx"]
+[ext_resource type="Script" uid="uid://b6yyb55jd8mgp" path="res://Procedural_Lensflare_Scene_Files/Scripts/lens_flare_script.gd" id="3_aq25w"]
+
+[node name="Procedural_Lens_Flare" type="Sprite3D" unique_id=427631710]
+material_override = ExtResource("1_gvlv0")
+billboard = 1
+no_depth_test = true
+texture = ExtResource("2_ugcrx")
+script = ExtResource("3_aq25w")

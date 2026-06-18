@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://1fooneexs0na"]
+
+[ext_resource type="Texture2D" uid="uid://qtb3pypke32a" path="res://Procedural_Lensflare_Scene_Files/Textures/Light/texture_06.png" id="1_bx8bi"]
+
+[resource]
+albedo_texture = ExtResource("1_bx8bi")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
